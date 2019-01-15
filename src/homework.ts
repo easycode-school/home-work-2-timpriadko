@@ -15,11 +15,11 @@ class MethodsForCarClass extends Car {
 
     public drive(kms: number): void {
         if (kms < 0) {
-            console.log("Incorrect value provided");
+            return console.log("Incorrect value provided");
         }
 
         this.mileage = this.mileage + kms;
-        this.fuel = this.fuel - kms;
+        this.fuel -= kms;
 
         if (this.fuel <= 0) {
             console.log("Need a refuel");
@@ -30,7 +30,7 @@ class MethodsForCarClass extends Car {
         if (amount < 0) {
             console.log("Incorrect value provided");
         }
-        return this.fuel + amount;
+        return this.fuel += amount;
     }
 
 // 3
